@@ -1,6 +1,6 @@
-.p-liste{
-    /* background-color: aqua; */
-}
+/* .p-liste{
+    background-color: aqua;
+} */
 
 .liste-x{
     display: inline-block;
@@ -15,7 +15,7 @@
 }
 
 .liste-result{
-    display: inline-block;
+    /* display: inline-block; */
     background-color: rgb(164, 167, 164);
     width: 55px;
     height: 15px;
@@ -28,7 +28,7 @@
 }
 
 .solution{
-    display: inline-block;
+    /* display: inline-block; */
     background-color: rgb(0, 89, 255);
     width: 55px;
     height: 15px;
@@ -44,7 +44,7 @@
 }
 
 .solution-rest{
-    display: inline-block;
+    /* display: inline-block; */
     background-color: rgb(0, 89, 255);
      width: 55px;
     height: 15px;
@@ -58,4 +58,8 @@
     padding: 7px;
     color: white;
     cursor: default;
+}
+
+#solution-27{
+    transform: translate(-5px);
 }

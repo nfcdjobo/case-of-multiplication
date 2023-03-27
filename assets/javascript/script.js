@@ -1,20 +1,24 @@
-const solution = document.querySelectorAll("span[refer='solution']");
-solution.forEach(cle => cle.addEventListener("mousedown", bordure));
-solution.forEach(cle => cle.addEventListener("mousemove", pasBordure));
+const solution = document.querySelectorAll("*");
+solution.forEach(cle => cle.addEventListener("mousemove", bordure));
 function bordure(event){
-    document.querySelectorAll(".liste-result").forEach(cle=>{
-        cle.style.border = "2px dotted black";
-    })
     
+    if (event.target.id.includes("solution")){
+        event.target.addEventListener("mousemove", deplacer)
+        function deplacer(eve){
+            solution.forEach(cle => cle.style.cursor = "move");
+            event.target.style.transform = "translate(" + eve.clientX + "px," + eve.clientY + "px)";
+            // event.target.style.transform = "translateY(" + event.clientY + "px)";    
+        }
+
+
+        document.querySelectorAll(".liste-result").forEach(cle => {
+            cle.style.border = "2px dotted black";
+        })
+        document.querySelector(".content").style.cursor = "move";
+       
+
+    }
     
-    
-    console.log(event)
 }
 
-function pasBordure(event){
-    document.querySelectorAll(".liste-result").forEach(cle => {
-        document.getElementById(event.target.id).style.transform = `translate(${window.clientX}, ${window.clientY})`;
-        cle.style.border = "none";
-        console.log(event.clientX, event.clientY)
-    })
-}
+
